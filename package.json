@@ -1,0 +1,19 @@
+{
+  "name": "circlecitest",
+  "version": "0.0.1",
+  "description": "Test de deployement avec circleci",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theopth/circlecitest.git"
+  },
+  "author": "Theo Ponthieu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theopth/circlecitest/issues"
+  },
+  "homepage": "https://github.com/theopth/circlecitest#readme"
+}
