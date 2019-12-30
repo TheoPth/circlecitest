@@ -33,14 +33,11 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-  deploy:
-    machine:
-      enabled: true
-    steps:
-      - run:
-          name: Deploy Over SSH
-          command: |
-            ssh $SSH_USER@$SSH_HOST "node app.js"
+  deployment:
+    production:
+      branch: master
+      commands:
+        - scp -r circle-pushing/* username@my-server:/path-to-put-files-on-server/
 
 workflows:
   version: 2
