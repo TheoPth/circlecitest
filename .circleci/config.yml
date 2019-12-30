@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:7.10
+      - image: circleci/node:chakracore-10.13
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -35,7 +35,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:7.10
+      - image: circleci/node:chakracore-10.13
     steps:
       - run:
           name: Deploy Over SSH
@@ -50,7 +50,4 @@ workflows:
       - deploy:
           requires:
             - build
-          filters:
-            branches:
-              only: master
 
