@@ -34,19 +34,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
   deploy:
-    production:
-      branch: master
-      commands:
-        - scp -r circle-pushing/* username@my-server:/path-to-put-files-on-server/
+    docker:
+      - image: circleci/node:7.10
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh $SSH_USER@$SSH_HOST "node app.js"
 
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
+
