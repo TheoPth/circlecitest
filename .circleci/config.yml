@@ -37,6 +37,9 @@ jobs:
     docker:
       - image: circleci/node:chakracore-10.13
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:JlqWf6vxK6Q+TrjyzFYj3B7Z/dR+W4bcMNbhjWrcDg8"
       - run:
           name: Deploy Over SSH
           command: |
