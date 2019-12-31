@@ -45,6 +45,7 @@ jobs:
           command: |
             ssh $SSH_USER@$SSH_HOST "node app.js"
 
+
 workflows:
   version: 2
   build-and-deploy:
