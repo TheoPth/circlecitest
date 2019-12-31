@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh -o VerifyHostKeyDNS=no $SSH_USER@$SSH_HOST "node app.js"
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "node app.js"
 
 workflows:
   version: 2
