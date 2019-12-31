@@ -43,7 +43,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "node app.js"
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd circlecitest && git pull && docker build -t circlenode . && docker-compose up -d"
 
 workflows:
   version: 2
